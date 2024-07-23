@@ -305,6 +305,22 @@
         <configrefs />
       </settings>
     </config>
+    <config guid="17faf997-8ffe-4014-be1e-0bf7d3da317c">
+      <active>true</active>
+      <description>PMDG 737: HDG DOT OFF (CRS)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="Variable" varType="number" varName="HDG or TRK" varExpression="$" />
+        <test type="Float" value="1" />
+        <modifiers>
+          <comparison active="True" value="1" operand="=" ifValue="0" elseValue="0" />
+        </modifiers>
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Heading Dot" />
+        <preconditions>
+          <precondition type="variable" active="true" ref="HDG or TRK" operand="=" value="1" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
   </outputs>
   <inputs>
     <config guid="9b97d439-5d03-4e41-964e-4c3c6346ddec">
