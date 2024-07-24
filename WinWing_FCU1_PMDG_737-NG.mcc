@@ -58,32 +58,14 @@
       </settings>
     </config>
     <config guid="824bd1c7-90a9-43e5-986b-58df054cf69e">
-      <active>false</active>
-      <description>PMDG 737 MCP: V/S (only positive w/o FSUIPC)</description>
+      <active>true</active>
+      <description>PMDG 737 MCP: V/S</description>
       <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <source type="SimConnect" VarType="CODE" Value="(L:ngx_VSwindow, number)" UUID="654bbcc2-7707-4930-8214-64fb1aef3a5b" />
         <test type="Float" value="0" />
         <modifiers />
         <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="VS Value" />
         <preconditions>
-          <precondition type="config" active="true" ref="0c87e362-54ea-416a-a1f3-1c38f3001088" operand="!=" value="1" logic="and" />
-        </preconditions>
-        <configrefs />
-      </settings>
-    </config>
-    <config guid="cbb5aa19-b934-4f26-b29a-ceb1bcbdf978">
-      <active>true</active>
-      <description>PMDG 737 MCP: V/S (w/ registered FSUIPC)</description>
-      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <source type="FSUIPC" offset="0x65D0" offsetType="Integer" size="2" mask="0xFFFF" bcdMode="False" />
-        <test type="Float" value="0" />
-        <modifiers>
-          <transformation active="True" expression="if($!=-16960,$,0)" />
-        </modifiers>
-        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="VS Value" />
-        <preconditions>
-          <precondition type="config" active="true" ref="b22e0796-c2a4-4913-9bef-66a16d58f0b3" operand="=" value="0" logic="and" />
-          <precondition type="config" active="true" ref="71618c5b-676f-41df-8ccf-d821d685de41" operand="=" value="0" logic="and" />
           <precondition type="config" active="true" ref="0c87e362-54ea-416a-a1f3-1c38f3001088" operand="!=" value="1" logic="and" />
         </preconditions>
         <configrefs />
