@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MobiflightConnector>
+  <outputs>
+    <config guid="54ac3bef-bf66-4b87-be58-2c5a32174218">
+      <active>true</active>
+      <description>IAS IND</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:ngx_SPDwindow, number)" UUID="6120d8a3-c644-48d2-9811-55d7abc7eca2" />
+        <test type="Float" value="1" />
+        <modifiers>
+          <transformation active="True" expression="Round($,0)" />
+        </modifiers>
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Speed Value" />
+        <preconditions>
+          <precondition type="config" active="true" ref="39c43f30-c294-485b-99e5-961b2b5e4f8f" operand="!=" value="1" logic="and" />
+          <precondition type="config" active="true" ref="462b2160-761d-4dbd-ae6d-0575804001ce" operand="&gt;" value="10" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="416d4dea-534e-46bb-9413-148ca8f9e027">
+      <active>true</active>
+      <description>HDG IND</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:ngx_HDGwindow, number)" UUID="bfb7daf3-2c0d-47c1-b7b1-69aedcc9dc59" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Heading Value" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="a6aba008-80c0-4271-aa70-7bb243c7a306">
+      <active>true</active>
+      <description>V/S IND</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="FSUIPC" offset="0x655E" offsetType="Integer" size="2" mask="0xFFFF" bcdMode="False" />
+        <test type="Float" value="-200" />
+        <modifiers />
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="VS Value" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="0f9e0e0b-74c8-4ccf-9759-d9138f18183c">
+      <active>true</active>
+      <description>ALT IND</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:ngx_ALTwindow, number)" UUID="ce81829d-0105-42d4-a683-237062a0cf3f" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Altitude Value" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="2f3164b7-f77a-40fc-ada3-47098f0b3362">
+      <active>true</active>
+      <description>APP</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:ngx_MCP_App)" UUID="f1c44807-a05b-4445-a8f1-d3382b0fccee" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="Output" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" pin="APPR" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="242fd30f-d154-4338-8064-c212423d1a5f">
+      <active>true</active>
+      <description>LOC</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:ngx_MCP_Loc)" UUID="0" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="Output" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" pin="LOC" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="4d5ec57f-2b34-4a86-ab90-d345e61be2bc">
+      <active>true</active>
+      <description>VS STATUS</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:ngx_MCP_VS, number)" UUID="2301644a-d579-4b3c-ae8b-974b83a5c8a2" />
+        <test type="Float" value="1" />
+        <modifiers>
+          <comparison active="True" value="0" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="VS Dashes On/Off" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="18397ee9-3919-4432-b54d-7c4e362fe646">
+      <active>true</active>
+      <description>ALT DOT VNAV</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:ngx_MCP_VNav, number)" UUID="-" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Altitude Dot" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="4edf5551-286e-4a5f-9878-4b147348801e">
+      <active>true</active>
+      <description>A/T ON</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:switch_2071_a, number)" UUID="96eb1dd2-e2aa-4cd2-9246-28de2393493a" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="Output" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" pin="ATHR" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="775c46ca-8229-4f11-a3e0-61dd899df226">
+      <active>true</active>
+      <description>MACH TOGGLE</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:ngx_SPDwindow, number)" UUID="6120d8a3-c644-48d2-9811-55d7abc7eca2" />
+        <test type="Float" value="1000" />
+        <modifiers>
+          <transformation active="True" expression="if($&lt;10,1,0)" />
+        </modifiers>
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Mach Mode On/Off" />
+        <preconditions>
+          <precondition type="config" active="false" ref="54ac3bef-bf66-4b87-be58-2c5a32174218" operand="&lt;" value="2" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="462b2160-761d-4dbd-ae6d-0575804001ce">
+      <active>true</active>
+      <description>MACH IND</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="FSUIPC" offset="0x6554" offsetType="Float" size="4" mask="0xFFFFFFFF" bcdMode="False" />
+        <test type="Float" value="1" />
+        <modifiers>
+          <transformation active="True" expression="Round($,2)" />
+        </modifiers>
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Mach Value" />
+        <preconditions>
+          <precondition type="config" active="true" ref="775c46ca-8229-4f11-a3e0-61dd899df226" operand="=" value="1" logic="and" />
+          <precondition type="config" active="true" ref="39c43f30-c294-485b-99e5-961b2b5e4f8f" operand="!=" value="1" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="39c43f30-c294-485b-99e5-961b2b5e4f8f">
+      <active>true</active>
+      <description>SPD DASHES</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:ngx_SPDwindow, number)" UUID="6120d8a3-c644-48d2-9811-55d7abc7eca2" />
+        <test type="Float" value="0" />
+        <modifiers>
+          <transformation active="False" expression="if(#&gt;2,1,0)" />
+          <comparison active="True" value="-1" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Speed Dashes On/Off" />
+        <preconditions>
+          <precondition type="config" active="false" ref="462b2160-761d-4dbd-ae6d-0575804001ce" operand="&gt;" value="10" logic="and" />
+        </preconditions>
+        <configrefs>
+          <configref active="True" ref="462b2160-761d-4dbd-ae6d-0575804001ce" placeholder="#" testvalue="1" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="7c0e6977-8a01-42f1-80df-8848cd51c169">
+      <active>true</active>
+      <description>BACKLIGHT</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:OH_GS_PANEL_LIGHT_CONTROL, number)" UUID="0" />
+        <test type="Float" value="1" />
+        <modifiers>
+          <transformation active="True" expression="if(#=0,0,$)" />
+        </modifiers>
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Backlight Percentage" />
+        <preconditions />
+        <configrefs>
+          <configref active="True" ref="e56eac63-dfe2-48a2-a26a-f048397578c0" placeholder="#" testvalue="1" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="e56eac63-dfe2-48a2-a26a-f048397578c0">
+      <active>true</active>
+      <description>LCD BRIGHTNESS</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:Battery)" UUID="0" />
+        <test type="Float" value="1" />
+        <modifiers>
+          <transformation active="True" expression="if($=1,100,0)" />
+        </modifiers>
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="LCD Percentage" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="e42062f8-0982-4930-8182-d7bb5077f745">
+      <active>true</active>
+      <description>LED BRIGHTNESS</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:Battery)" UUID="0" />
+        <test type="Float" value="1" />
+        <modifiers>
+          <transformation active="True" expression="if($=1,100,0)" />
+        </modifiers>
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="LED Percentage" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="4f749cd9-f1db-4a17-a09e-a85c9cb94af8">
+      <active>true</active>
+      <description>SPD DOT VNAV</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:ngx_MCP_VNav, number)" UUID="decf9e2d-bfb1-4b2f-bf5b-6028ba618d4b" />
+        <test type="Float" value="1" />
+        <modifiers>
+          <comparison active="True" value="1" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Speed Dot" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="308b2ed0-34b2-4b06-8a66-7079b30e9fdd">
+      <active>true</active>
+      <description>AP1 LIGHT</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:ngx_MCP_CMDA)" UUID="0" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="Output" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" pin="AP1" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="509f6bd2-0ca6-43a8-9d6f-1e92e90ce2a9">
+      <active>true</active>
+      <description>AP2 LIGHT</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:ngx_MCP_CMDA)" UUID="0" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="Output" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" pin="AP2" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="d7543e99-d891-4305-ba00-ddc7ba1059ac">
+      <active>true</active>
+      <description>AP DISENGAGE</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="FSUIPC" offset="0x656B" offsetType="Integer" size="1" mask="0x00FF" bcdMode="False" />
+        <test type="Integer" value="0" />
+        <modifiers />
+        <display type="-" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" pin="" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="b49579a9-35cc-4392-aa11-e53a706c8e89">
+      <active>true</active>
+      <description>HDG DOG LNAV</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:switch_2111_a, number)" UUID="12dffcd4-0427-473e-82d4-1b4441e1f253" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Heading Dot" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="acda3475-5359-46f7-a7af-9770308f3184">
+      <active>true</active>
+      <description>A/T ARM</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="FSUIPC" offset="0x6567" offsetType="Integer" size="1" mask="0x00FF" bcdMode="False" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="-" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" pin="" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+  </outputs>
+  <inputs>
+    <config guid="bbff411f-4250-4192-a088-2f0fca2e8936">
+      <active>true</active>
+      <description>SPD DEC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 10" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="21008 (&gt;K:ROTOR_BRAKE)" presetId="7bdd6940-fed1-4796-a48d-6e647a61a3bd" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="775c46ca-8229-4f11-a3e0-61dd899df226" operand="=" value="0" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="e7686200-90c7-4f29-b4b0-94f94570d721">
+      <active>true</active>
+      <description>SPD INC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 11" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="21007 (&gt;K:ROTOR_BRAKE)" presetId="a0f10365-22ef-4be2-a294-2fdcc6fff722" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="775c46ca-8229-4f11-a3e0-61dd899df226" operand="=" value="0" logic="and" />
+        </preconditions>
+        <configrefs>
+          <configref active="True" ref="462b2160-761d-4dbd-ae6d-0575804001ce" placeholder="#" testvalue="1" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="c26ffea4-4518-4682-ae48-fbc9c4b73578">
+      <active>true</active>
+      <description>MACH INC .01</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 11" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="PmdgEventIdInputAction" eventId="84135" param="(Round(#,2)*1000)+10" aircraft="B777" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="775c46ca-8229-4f11-a3e0-61dd899df226" operand="=" value="1" logic="and" />
+        </preconditions>
+        <configrefs>
+          <configref active="True" ref="462b2160-761d-4dbd-ae6d-0575804001ce" placeholder="#" testvalue="1" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="84a2060f-1380-48d7-ab33-e91908334546">
+      <active>true</active>
+      <description>MACH DEC .01</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 10" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="PmdgEventIdInputAction" eventId="84135" param="(Round(#,2)*1000)-10" aircraft="B777" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="775c46ca-8229-4f11-a3e0-61dd899df226" operand="=" value="1" logic="and" />
+        </preconditions>
+        <configrefs>
+          <configref active="True" ref="462b2160-761d-4dbd-ae6d-0575804001ce" placeholder="#" testvalue="1" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="e20cf4d6-211f-416f-8a31-98b7198c02ec">
+      <active>true</active>
+      <description>HDG INC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 15" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="218007 (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="2dbcd902-9373-48cb-8574-2de964d44fbf">
+      <active>true</active>
+      <description>HDG DEC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 14" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="218008 (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="aea39cc0-94ec-49c8-9eb3-be55f95621a1">
+      <active>true</active>
+      <description>VS INC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 23" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="22208 (&gt;K:ROTOR_BRAKE)" presetId="0" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="b6e39390-75b3-419f-9bec-01034ca49ae9">
+      <active>true</active>
+      <description>VS DEC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 22" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="22207 (&gt;K:ROTOR_BRAKE)" presetId="0" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="2d6188ba-c644-436c-8378-ff64786170fd">
+      <active>true</active>
+      <description>ALT INC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 19" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="225007 (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="d6c7ca88-de72-4f15-bf35-3ea3131e3219">
+      <active>true</active>
+      <description>ALT DEC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 18" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="225008 (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="c2cbd476-5635-4090-8d3b-91d04a1ccc14">
+      <active>true</active>
+      <description>ALT INCR 1000</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 27" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="22501 (&gt;K:ROTOR_BRAKE)" presetId="b4993c19-8715-4e1f-94d7-2c58e021668f" />
+          <onRelease type="MSFS2020CustomInputAction" command="22501 (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="c60e923a-29da-473a-bd58-5d18ae3275e0">
+      <active>true</active>
+      <description>LNAV</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 16" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="21101  (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="4c9c9369-aa71-42eb-93be-65d6bc4da620">
+      <active>true</active>
+      <description>HDG SEL</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 17" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="21801  (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="dcb25aa0-4eec-4d6e-8199-6124db0db9d4">
+      <active>true</active>
+      <description>V/S SEL</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 25" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="22301 (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="1305fe84-aaf0-450c-a6d4-5c24f6b46413">
+      <active>true</active>
+      <description>ALT HLD</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 24" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="22601 (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="d39965fc-0749-4701-a376-33eb31dc0bd4">
+      <active>true</active>
+      <description>APP</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 9" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="22801 (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="e7b101b0-9469-4b20-9fcd-b5d2cf303458">
+      <active>true</active>
+      <description>LOC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 2" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="22701 (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="cae0d98e-02fd-47ba-8318-565c89f817eb">
+      <active>true</active>
+      <description>AP1 Button: A/P Disengage Off -&gt; A/P On</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 4" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="20301 (&gt;K:ROTOR_BRAKE)" presetId="7314340b-194a-4b36-84a6-3910dd584f75" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="d7543e99-d891-4305-ba00-ddc7ba1059ac" operand="=" value="0" logic="and" />
+          <precondition type="config" active="true" ref="308b2ed0-34b2-4b06-8a66-7079b30e9fdd" operand="=" value="0" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="5449529c-054b-419d-81c7-a9b01482d7a6">
+      <active>true</active>
+      <description>AP1 Button: A/P On -&gt; A/P Disengage On</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 4" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="21401 (&gt;K:ROTOR_BRAKE)" presetId="d7ef609e-8703-486b-a23d-9456a4ea7d3c" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="308b2ed0-34b2-4b06-8a66-7079b30e9fdd" operand="=" value="1" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="556b27cf-9267-4c10-8f1c-e87f51286aec">
+      <active>true</active>
+      <description>AP1 Button: A/P Disengage On -&gt; A/P Disengage Off</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 4" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="21401 (&gt;K:ROTOR_BRAKE)" presetId="d7ef609e-8703-486b-a23d-9456a4ea7d3c" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="d7543e99-d891-4305-ba00-ddc7ba1059ac" operand="=" value="1" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="6a80ede1-c0b2-4bb3-bf29-08b0705b836d">
+      <active>true</active>
+      <description>AP2 Button: A/P Disengage Off -&gt; A/P On</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 5" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="22901 (&gt;K:ROTOR_BRAKE)" presetId="3b0de873-a3b0-483b-ac20-4d96e4c053b3" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="d7543e99-d891-4305-ba00-ddc7ba1059ac" operand="=" value="0" logic="and" />
+          <precondition type="config" active="true" ref="509f6bd2-0ca6-43a8-9d6f-1e92e90ce2a9" operand="=" value="0" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="9ad445bd-d369-4cd1-8ce1-9b89f991295f">
+      <active>true</active>
+      <description>AP2 Button: A/P On -&gt; A/P Disengage On</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 5" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="21401 (&gt;K:ROTOR_BRAKE)" presetId="d7ef609e-8703-486b-a23d-9456a4ea7d3c" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="509f6bd2-0ca6-43a8-9d6f-1e92e90ce2a9" operand="=" value="1" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="c677ec8f-2902-4dfd-97ef-3944a4cc357c">
+      <active>true</active>
+      <description>AP2 Button: A/P Disengage On -&gt; A/P Disengage Off</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 5" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="21401 (&gt;K:ROTOR_BRAKE)" presetId="d7ef609e-8703-486b-a23d-9456a4ea7d3c" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="d7543e99-d891-4305-ba00-ddc7ba1059ac" operand="=" value="1" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="3cff9f51-98e4-4134-bb8f-2edd9e01034f">
+      <active>true</active>
+      <description>A/THR Arm On</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 6" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="20501 (&gt;K:ROTOR_BRAKE)&#xA;20401 (&gt;K:ROTOR_BRAKE)" presetId="0" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="acda3475-5359-46f7-a7af-9770308f3184" operand="=" value="0" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="403ef37b-fb03-4087-9405-c631bbefa8c0">
+      <active>true</active>
+      <description>A/THR Arm On -&gt; A/T On</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 6" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="20701 (&gt;K:ROTOR_BRAKE)" presetId="1e27a25a-4453-4387-aca2-b9c31bb81747" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="acda3475-5359-46f7-a7af-9770308f3184" operand="=" value="1" logic="and" />
+          <precondition type="config" active="true" ref="4edf5551-286e-4a5f-9878-4b147348801e" operand="=" value="0" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="3baf67c1-7327-45e0-9463-2e0ddaf02f90">
+      <active>true</active>
+      <description>A/THR Arm Off</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 6" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="20501 (&gt;K:ROTOR_BRAKE)&#xA;20401 (&gt;K:ROTOR_BRAKE)" presetId="0" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="acda3475-5359-46f7-a7af-9770308f3184" operand="=" value="1" logic="and" />
+          <precondition type="config" active="true" ref="4edf5551-286e-4a5f-9878-4b147348801e" operand="=" value="1" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="0cec0413-0f01-4c1f-a7fb-83f208dca779">
+      <active>true</active>
+      <description>SPD PUSH</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 13" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="210001 (&gt;K:ROTOR_BRAKE)" presetId="ba8cc37d-0384-4b27-a9c1-694d321f035c" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="ecb94cec-790e-4929-88b3-c9caf47bd1c7">
+      <active>true</active>
+      <description>FLCH</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 21" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="21301 (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="faec398b-ed12-4b2c-905e-8f46cddfa639">
+      <active>true</active>
+      <description>FDs</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 3" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="23001 (&gt;K:ROTOR_BRAKE)&#xA;20201 (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="b34a303e-c662-42de-8b0f-4d30e01e69b0">
+      <active>true</active>
+      <description>ALT PUSH</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 20" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="225101 (&gt;K:ROTOR_BRAKE)" presetId="-" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="8bbd7cbc-b912-434c-ab4d-9707350401b5">
+      <active>true</active>
+      <description>VNAV</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 12" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="21201 (&gt;K:ROTOR_BRAKE)" presetId="a215c43a-46e7-415c-a65f-f18afd14f393" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="def5c749-7d25-456e-8190-f2ad471b96b3">
+      <active>true</active>
+      <description>METRIC ALT</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 8" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="19401 (&gt;K:ROTOR_BRAKE)" presetId="0" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="3cd8c8cd-5aa3-49b4-ac11-9a5ef67dd213">
+      <active>true</active>
+      <description>SPD/MACH</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 1" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="20801 (&gt;K:ROTOR_BRAKE)" presetId="ef8b916b-edc2-4311-8483-ad5470f46828" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+  </inputs>
+</MobiflightConnector>
