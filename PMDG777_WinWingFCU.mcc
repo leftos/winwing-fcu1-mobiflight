@@ -1,23 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <MobiflightConnector>
   <outputs>
-    <config guid="54ac3bef-bf66-4b87-be58-2c5a32174218">
-      <active>true</active>
-      <description>IAS IND</description>
-      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <source type="SimConnect" VarType="CODE" Value="(L:ngx_SPDwindow, number)" UUID="6120d8a3-c644-48d2-9811-55d7abc7eca2" />
-        <test type="Float" value="1" />
-        <modifiers>
-          <transformation active="True" expression="Round($,0)" />
-        </modifiers>
-        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Speed Value" />
-        <preconditions>
-          <precondition type="config" active="true" ref="39c43f30-c294-485b-99e5-961b2b5e4f8f" operand="!=" value="1" logic="and" />
-          <precondition type="config" active="true" ref="462b2160-761d-4dbd-ae6d-0575804001ce" operand="&gt;" value="10" logic="and" />
-        </preconditions>
-        <configrefs />
-      </settings>
-    </config>
     <config guid="416d4dea-534e-46bb-9413-148ca8f9e027">
       <active>true</active>
       <description>HDG IND</description>
@@ -123,13 +106,15 @@
         <source type="SimConnect" VarType="CODE" Value="(L:ngx_SPDwindow, number)" UUID="6120d8a3-c644-48d2-9811-55d7abc7eca2" />
         <test type="Float" value="1000" />
         <modifiers>
-          <transformation active="True" expression="if($&lt;10,1,0)" />
+          <transformation active="True" expression="if(#&lt;10,1,0)" />
         </modifiers>
         <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Mach Mode On/Off" />
         <preconditions>
           <precondition type="config" active="false" ref="54ac3bef-bf66-4b87-be58-2c5a32174218" operand="&lt;" value="2" logic="and" />
         </preconditions>
-        <configrefs />
+        <configrefs>
+          <configref active="True" ref="462b2160-761d-4dbd-ae6d-0575804001ce" placeholder="#" testvalue="1" />
+        </configrefs>
       </settings>
     </config>
     <config guid="462b2160-761d-4dbd-ae6d-0575804001ce">
@@ -144,6 +129,23 @@
         <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Mach Value" />
         <preconditions>
           <precondition type="config" active="true" ref="775c46ca-8229-4f11-a3e0-61dd899df226" operand="=" value="1" logic="and" />
+          <precondition type="config" active="true" ref="39c43f30-c294-485b-99e5-961b2b5e4f8f" operand="!=" value="1" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="b6edff26-b7f8-43c0-bb6a-b71800c1cca3">
+      <active>true</active>
+      <description>SPEED IND</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="FSUIPC" offset="0x6554" offsetType="Float" size="4" mask="0xFFFFFFFF" bcdMode="False" />
+        <test type="Float" value="1" />
+        <modifiers>
+          <transformation active="True" expression="Round($,2)" />
+        </modifiers>
+        <display type="LcdDisplay" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" address="Speed Value" />
+        <preconditions>
+          <precondition type="config" active="true" ref="775c46ca-8229-4f11-a3e0-61dd899df226" operand="=" value="0" logic="and" />
           <precondition type="config" active="true" ref="39c43f30-c294-485b-99e5-961b2b5e4f8f" operand="!=" value="1" logic="and" />
         </preconditions>
         <configrefs />
@@ -255,7 +257,7 @@
       <description>AP DISENGAGE</description>
       <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <source type="FSUIPC" offset="0x656B" offsetType="Integer" size="1" mask="0x00FF" bcdMode="False" />
-        <test type="Integer" value="0" />
+        <test type="Float" value="0" />
         <modifiers />
         <display type="-" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" trigger="normal" pin="" pinBrightness="255" />
         <preconditions />
