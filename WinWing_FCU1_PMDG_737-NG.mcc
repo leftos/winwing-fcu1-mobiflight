@@ -697,13 +697,45 @@
     </config>
     <config guid="cfe5efc9-df77-4627-9ab8-bf6ebb2b45b9">
       <active>true</active>
-      <description>A/T ARM</description>
+      <description>A/T ARM Off -&gt; A/T ARM On</description>
       <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 6" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <button>
           <onPress type="MSFS2020CustomInputAction" command="38001  (&gt;K:ROTOR_BRAKE)" presetId="08fd0f26-5151-40a9-8464-895fd35b69db" />
           <onRelease type="MSFS2020CustomInputAction" command="(L:S_FCU_ATHR) ++ (&gt;L:S_FCU_ATHR)" presetId="44632ffe-476d-4ada-ab45-6f629c67fdd5" />
         </button>
-        <preconditions />
+        <preconditions>
+          <precondition type="config" active="true" ref="c7a42839-d8d4-4e3e-a477-b83ceb8f0e56" operand="=" value="0" logic="and" />
+          <precondition type="variable" active="true" ref="ATOFFSTASH" operand="=" value="0" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="61146382-9de3-43a8-84a8-ba8d612f72bd">
+      <active>true</active>
+      <description>A/T ARM On -&gt; A/T ARM Off</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 6" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="38001  (&gt;K:ROTOR_BRAKE)" presetId="08fd0f26-5151-40a9-8464-895fd35b69db" />
+          <onRelease type="VariableInputAction" varType="number" varName="ATOFFSTASH" varExpression="1" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="c7a42839-d8d4-4e3e-a477-b83ceb8f0e56" operand="=" value="1" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="c451bcfe-2227-4106-ac62-cd5fadb2eb6d">
+      <active>true</active>
+      <description>A/T ARM Off -&gt; Turn off Warning</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.2, Culture=neutral, PublicKeyToken=null" serial="WINWING FCU-320 / JS-1b292510-3fb0-11ef-8004-444553540000" name="Button 6" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="34001 (&gt;K:ROTOR_BRAKE)" presetId="dc3a11b1-aa0b-4459-935e-904f047a3a74" />
+          <onRelease type="VariableInputAction" varType="number" varName="ATOFFSTASH" varExpression="0" />
+        </button>
+        <preconditions>
+          <precondition type="config" active="true" ref="c7a42839-d8d4-4e3e-a477-b83ceb8f0e56" operand="=" value="0" logic="and" />
+          <precondition type="variable" active="true" ref="ATOFFSTASH" operand="=" value="1" logic="and" />
+        </preconditions>
         <configrefs />
       </settings>
     </config>
